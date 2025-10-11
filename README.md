@@ -64,7 +64,7 @@ lib/
 
 ### 1. Clone the repository  
 ```bash
-git clone https://github.com/yourusername/docscan_flutter.git
+git clone https://github.com/aamirali65/docscanner
 cd docscan_flutter
 ```
 ### 2. Install dependencies
