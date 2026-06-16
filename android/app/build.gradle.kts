@@ -20,7 +20,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.docscan_flutter"
-        minSdk = 21
+        minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -30,6 +30,10 @@ android {
     buildTypes {
         release {
             signingConfig = signingConfigs.getByName("debug")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }

@@ -1,21 +1,19 @@
-import 'package:docscan_flutter/screens/boarding.dart';
 import 'package:flutter/material.dart';
+import 'services/document_service.dart';
+import 'services/ad_service.dart';
+import 'app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Doc Scanner',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: OnboardingScreen(),
-    );
+  try {
+    await DocumentService.init();
+  } catch (e) {
+    debugPrint('DocumentService init error: $e');
   }
+  try {
+    await AdService.init();
+  } catch (e) {
+    debugPrint('AdService init error (non-fatal): $e');
+  }
+  runApp(const DocScanApp());
 }

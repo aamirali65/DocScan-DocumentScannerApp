@@ -50,6 +50,11 @@
             </intent-filter>
         </activity>
 
+        <!-- Google Mobile Ads -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8214884614326042~9784073981" />
+
         <!-- Flutter plugin registrant -->
         <meta-data
             android:name="flutterEmbedding"
